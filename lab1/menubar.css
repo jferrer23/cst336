@@ -1,0 +1,19 @@
+#Title {
+    background-color:black;
+    color:white;
+    text-align: center;
+    font-size:54px;
+    margin:0px auto;
+}
+
+.MenuBar {
+    font-size:48px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.current {
+    background-color: gray;
+    padding-left: 10px;
+    padding-right: 10px;
+}
