@@ -47,12 +47,31 @@ footer {
 }
 
 #Title {
-    color:white;
-    text-align: center;
     font-size:54px;
     margin:0px auto;
 }
 
 .Current {
     color:orange;
+}
+
+table {
+    margin: 0px auto;
+}
+
+td {
+    padding-right: 10px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: orange;
+}
+    
+#table-header {
+    background-color: #351a00;
+}
+
+.table-row {
+    background-color: #753900;
 }
