@@ -1,4 +1,4 @@
-<?php header( 'Location: /index.html' ) ;  ?>
+<?php header( 'Location: /index.php' ) ;  ?>
 <html>
     <body>
         <h1>Welcome to CST336 Workspace</h1>
