@@ -30,11 +30,12 @@ nav a:hover {
     text-align: left;
 }
 #Logo {
+    padding-left:200px;
     float: left;
 }
 
 #Disclaimer {
-    padding-top: 20px;
+    padding-top: 30px;
     float:left;
     color:white;
 }
