@@ -24,9 +24,14 @@ nav a:hover {
 #Self, #Blurb{
     float:left;
 }
+#Logo {
+    float: left;
+    size: 50%
+}
 
-#Logo, #Disclaimer {
+#Disclaimer {
     float:left;
+    color:blue;
 }
 
 footer {
