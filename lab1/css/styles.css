@@ -49,6 +49,8 @@ footer {
 #Title {
     font-size:54px;
     margin:0px auto;
+    font-family: Pacifico, cursive;
+    margin-bottom: 0px;
 }
 
 .Current {
@@ -83,4 +85,8 @@ ul {
 
 .Hobbies{
     color: yellow;
+}
+
+.content {
+    margin: 0px auto;
 }
