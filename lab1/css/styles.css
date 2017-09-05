@@ -21,8 +21,13 @@ nav a:hover {
     transition:.9s;
 }
 
-#Self, #Blurb{
+#Self {
     float:left;
+}
+
+#Blurb {
+    float:left;
+    text-align: left;
 }
 #Logo {
     float: left;
