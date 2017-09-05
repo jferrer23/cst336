@@ -15,6 +15,20 @@ nav a {
     color: white;
 }
 
+nav a:hover {
+    border-bottom:2px orange solid;
+    font-size:2em;
+    transition:.9s;
+}
+
+#Self, #Blurb{
+    float:left;
+}
+
+footer {
+    clear:left;
+}
+
 #Title {
     background-color:black;
     color:white;
