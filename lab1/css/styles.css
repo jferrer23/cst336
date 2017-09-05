@@ -34,12 +34,13 @@ nav a:hover {
 }
 
 #Disclaimer {
+    padding-top: 20px;
     float:left;
     color:white;
 }
 
 footer {
-    margin:auto;
+    margin: 0px auto;
     clear:left;
 }
 
