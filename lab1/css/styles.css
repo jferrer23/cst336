@@ -25,6 +25,10 @@ nav a:hover {
     float:left;
 }
 
+#Logo, #Disclaimer {
+    float:left;
+}
+
 footer {
     clear:left;
 }
