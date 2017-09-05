@@ -6,6 +6,11 @@
     margin:0px auto;
 }
 
+body {
+    background:black;
+    color:gray;
+}
+
 .MenuBar {
     font-size:48px;
     padding-left: 10px;
