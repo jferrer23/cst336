@@ -2,7 +2,7 @@ body {
     background:green;
 }
 
-nav, header {
+nav, header, footer {
     text-align: center;
 }
 
