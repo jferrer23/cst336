@@ -24,3 +24,10 @@ nav a:hover {
 .Current {
     color:orange;
 }
+
+#Title {
+    color:white;
+    font-size:54px;
+    margin:0px auto;
+    margin-bottom: 0px;
+}
