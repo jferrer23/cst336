@@ -21,7 +21,9 @@ nav a:hover {
 }
 
 .Current {
-    color:orange;
+    color:darkorange;
+    font-size:2em;
+    
 }
 
 #Title {
