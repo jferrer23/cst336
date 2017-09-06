@@ -25,9 +25,9 @@ nav a:hover {
     font-size:2em;
 }
 
-#Graphic {
-    padding-left: 250px;
-    margin:0px auto;
+#outer {
+    display:block;
+    text-align: center;
 }
 
 #Title {
