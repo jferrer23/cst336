@@ -2,8 +2,14 @@ body {
     background:green;
 }
 
-nav, header, footer {
+nav, header {
     text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin: 0px auto;
+    clear:left;
 }
 
 nav a {
