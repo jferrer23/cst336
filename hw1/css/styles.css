@@ -51,7 +51,7 @@ nav a:active {
 }
 
 .outer {
-    display:block;
+    display:block; /*changed the div to block so as to center images*/
     text-align: center;
 }
 
