@@ -4,6 +4,10 @@ body {
     color:gray;
 }
 
+hr {
+    width: 50%;
+}
+
 header, main, nav, footer {
     text-align: center;
 }
