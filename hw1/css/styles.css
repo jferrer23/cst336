@@ -51,7 +51,7 @@ nav a:active {
 }
 
 .outer {
-    margin-top: 300px;
+    margin-top: 150px;
     display:block; /*changed the div to block so as to center images*/
     text-align: center;
 }
@@ -68,6 +68,7 @@ nav a:active {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    margin-bottom: 10px;
 }
 
 #Disclaimer {
