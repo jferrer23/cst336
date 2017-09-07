@@ -3,6 +3,9 @@ body {
     margin:0px;
 }
 
+hr {
+    width: 50%;
+}
 nav, header {
     text-align: center;
 }
