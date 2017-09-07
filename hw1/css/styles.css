@@ -47,9 +47,15 @@ nav a:hover {
     text-align: center;
 }
 
+#overview {
+    color:white;
+    text-align: center;
+}
+
 #Title {
     color:white;
     font-size:54px;
     margin:0px auto;
     margin-bottom: 0px;
 }
+
