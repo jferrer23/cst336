@@ -31,6 +31,12 @@ nav a:hover {
     font-size:2em;
 }
 
+#Disclaimer {
+    padding-top: 30px;
+    float:left;
+    color:white;
+}
+
 #outer {
     display:block;
     text-align: center;
