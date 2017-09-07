@@ -27,8 +27,8 @@ nav a:hover {
 }
 
 nav a:active {
-    color:blue;
-    border-bottom:2px blue solid;
+    color:lightgreen;
+    border-bottom:2px lightgreen solid;
     font-size:2em;
     transition:0s;
 }
