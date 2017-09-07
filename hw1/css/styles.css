@@ -37,6 +37,11 @@ nav a:hover {
     color:white;
 }
 
+#Logo {
+    padding-left:250px;
+    float: left;
+}
+
 #outer {
     display:block;
     text-align: center;
