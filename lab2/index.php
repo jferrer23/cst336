@@ -39,9 +39,9 @@
             $imgUrl2 = getRandomImgUrl();
             $imgUrl3 = getRandomImgUrl();
             
-            echo "<img id='reel1' src='" .$imgUrl1."'>";
-            echo "<img id='reel2' src='" .$imgUrl2."'>";
-            echo "<img id='reel3' src='" .$imgUrl3."'>";
+            echo "<img src='" .$imgUrl1."'>"; //id='reel1' 
+            echo "<img src='" .$imgUrl2."'>"; //id='reel2' 
+            echo "<img src='" .$imgUrl3."'>"; //id='reel3' 
             
         
 
