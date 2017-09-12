@@ -4,11 +4,6 @@
         border-radius:20px;
     }
     
-    .random-img {
-        width:100px;
-        height:100px;
-    }
-    
     body {
         background-color: black;
         background-image:url("../img/bg7.jpg");
