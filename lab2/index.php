@@ -7,7 +7,8 @@
         
         <?php
         
-            
+            $imgUrl = "./img/cherry.png";
+            echo "<img src='$imgUrl'>";
         
         ?>
         
