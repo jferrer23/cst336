@@ -2,43 +2,49 @@
 <html>
     <head>
         <title> 777 Slot Machine </title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
     </head>
     <body>
         
         <?php
-        
-            $cherryUrl = "./img/cherry.png";
-            $grapeUrl = "./img/grapes.png";
-            $lemonUrl = "./img/lemon.png";
-            $orangeUrl = "./img/orange.png";
-            $sevenUrl = "./img/seven.png";
-            $barUrl = "./img/bar.png";
             
-            $randVal = rand(0, 5);
-            
-            switch($randVal) {
-                case 0:
-                    echo "<img src='$cherryUrl'>";
-                    break;
-                case 1:
-                    echo "<img src='$grapeUrl'>";
-                    break;
-                case 2:
-                    echo "<img src='$lemonUrl'>";
-                    break;
-                case 3:
-                    echo "<img src='$orangeUrl'>";
-                    break;
-                case 4:
-                    echo "<img src='$sevenUrl'>";
-                    break;
-                case 5:
-                    echo "<img src='$barUrl'>";
-                    break;
+            function getRandomImgUrl() 
+            {
+                $randVal = rand(0, 5);
+                $imgUrl;
+                switch($randVal) {
+                    case 0:
+                        $imgUrl = "./img/cherry.png"; 
+                        break;
+                    case 1:
+                        $imgUrl = "./img/grapes.png"; 
+                        break;
+                    case 2:
+                        $imgUrl = "./img/lemon.png"; 
+                        break;
+                    case 3:
+                        $imgUrl = "./img/orange.png"; 
+                        break;
+                    case 4:
+                        $imgUrl = "./img/seven.png"; 
+                        break;
+                    case 5:
+                        $imgUrl = "./img/bar.png"; 
+                        break;
+                }
+                return $imgUrl;
             }
-
-            echo "<img src='$imgUrl'>";
+            
+            $imgUrl1 = getRandomImgUrl();
+            $imgUrl2 = getRandomImgUrl();
+            $imgUrl3 = getRandomImgUrl();
+            
+            echo "<img class='random-img' src='" .$imgUrl1."'>";
+            echo "<img class='random-img' src='" .$imgUrl2."'>";
+            echo "<img class='random-img' src='" .$imgUrl3."'>";
+            
         
+
         ?>
         
     </body>
