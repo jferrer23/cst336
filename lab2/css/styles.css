@@ -21,7 +21,8 @@
     }
     #info {
         font-family: 'Baloo Bhaina', cursive;
-        
+        margin: 0 auto;
+        float: left;
     }
     
     #reel1, #reel2, #reel3 {
