@@ -60,12 +60,6 @@
     }
     
     function play() {
-        echo "<h1>Generic Slot Machine</h1>";
-        echo "<br />";
-        echo "<h3>Prizes</h3>";
-        echo "<h4>3 cherries = 100pts     3 grapes = 100pts     3 lemons = 100pts</h4>";
-        echo "<h4>3 oranges  = 250pts     3 bars   = 250pts</h4>";
-        echo "<h4>JACKPOT 3 sevens = 1000pts<h4>";
         $imgUrl1 = getRandomImgUrl();
         $imgUrl2 = getRandomImgUrl();
         $imgUrl3 = getRandomImgUrl();
