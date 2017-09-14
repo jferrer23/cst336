@@ -59,11 +59,10 @@
                             $totalPoints = 250;
                         break;
                     }
-                    else {
+                }
+                else {
                         echo "<h3>Try Again</h3>";
                     }
-                
-                }
                 echo "</div>";
             }
             
