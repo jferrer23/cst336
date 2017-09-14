@@ -9,9 +9,15 @@
     </head>
     <body>
         
-        <?php
+        <div id="main">
+            <?php
             play();
-        ?>
+            ?>
+        
+            <form>
+                <input type="submit" value="Spin!"/>
+            </form>
+        </div>
         
     </body>
 </html>
