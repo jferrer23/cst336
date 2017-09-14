@@ -19,6 +19,10 @@
         position:relative;
         margin:0 auto;
     }
+    #info {
+        font-family: 'Baloo Bhaina', cursive;
+        
+    }
     
     #reel1, #reel2, #reel3 {
         top:248px;
