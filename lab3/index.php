@@ -74,8 +74,7 @@
                     //echo $card["value"]." of ".$card["suit"];
     
                     //construct the imgURL for each card
-                    $imgUrl = "./img/cards/".$card["suit"]."/".$card[value].".png";
-                    
+
                     //translate this to HTML
                     echo "<img src='".$imgUrl."'>";
                     }

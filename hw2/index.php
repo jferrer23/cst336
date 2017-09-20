@@ -9,7 +9,7 @@
 
     </head>
     <body>
-        
+        <div class="bg"></div>
         <?php
         helloWorld();
         ?>
