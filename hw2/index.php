@@ -6,13 +6,17 @@
     <head>
         <title>Death Battle Generator</title>
         <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
-
     </head>
+    
     <body class="bg">
-     
+
         <?php
-        helloWorld();
+        winner();
         ?>
+        
+        <form>
+        <input class="award" id="redButton" type="image" src="img/button.png" alt="button">
+        </form>
         
     </body>
 </html>

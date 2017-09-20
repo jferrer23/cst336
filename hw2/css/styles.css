@@ -2,8 +2,19 @@ body, html {
     height: 100%;
 }
 
-html {
+body {
     margin: 0px 0px;
+    background:black;
+}
+
+.award{
+    height: 75px;
+    width:75px;
+}
+
+.pic{
+    height:290px;
+    width: 340px;
 }
 
 .bg {
@@ -11,10 +22,66 @@ html {
     background-image: url("../img/Frame.png");
 
     /* Full height */
-    height: 100%; 
+    /*height: 100%; */
 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+}
+
+#Fighter1{
+    position: absolute;
+    top:185px;
+    left:190px;
+    color:white;
+}
+
+#Fighter2{
+    position: absolute;
+    top:185px;
+    left:665px;
+    color:white;
+}
+
+.leftFighter{
+    float:left;
+    margin-left: 225px;
+    margin-top:240px;
+    text-align: center;
+}
+
+.rightFighter{
+    
+    float:right;
+    margin-right: 225px;
+    margin-top:240px;
+    text-align: center;
+}
+
+#leftWon{
+    position: absolute;
+    margin-left: 500px;
+    margin-top:240px;
+    text-align: center;
+}
+
+#rightWon{
+    position: absolute;
+    margin-left: 685px;
+    margin-top:240px;
+    text-align: center;
+}
+
+#tieGame{
+    position: absolute;
+    text-align: center;
+    margin-left: 575px;
+    margin-top:240px;
+    color:red;
+}
+
+#redButton{
+    position: absolute;
+    top:50px;
+    left:50px;
 }
