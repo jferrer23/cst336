@@ -29,12 +29,6 @@
         
         <style>
             @import url("css/styles.css");
-            .bg {
-                background-image: url('<?=$backgroundImage?>');
-                background-size:cover;
-                background-repeat: no-repeat;
-                color:black;
-            }
         </style>
     </head>
     
