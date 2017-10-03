@@ -45,14 +45,14 @@
         <form>
         <input type="text" name="keyword" placeholder="Keyword" value="<?=$_GET['keyword']?>"/>
         <input type="submit" value="Search"/>
+        
         <br />
-        <div id="orientation">
-            <input type="radio" id="lhorizontal" name="layout" value="horizontal">
-            <label for="Horizontal"></label><label for="lhorizontal">Horizontal</label>
-            <input type="radio" id="lvertical" name="layout" value="vertical">
-            <label for="Vertical"></label><label for="lvertical">Vertical</label>
-            <br />
-        </div>
+        <input type="radio" id="lhorizontal" name="layout" value="horizontal">
+        <label for="Horizontal"></label><label for="lhorizontal">Horizontal</label>
+        <input type="radio" id="lvertical" name="layout" value="vertical">
+        <label for="Vertical"></label><label for="lvertical">Vertical</label>
+        <br />
+        
         <select name ="category">
             <option value="n/a">Select One</option>
             <option value="ocean">Sea</option>
