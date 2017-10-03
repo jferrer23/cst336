@@ -59,6 +59,9 @@
             <option value="forest">Forest</option>
             <option value="mountain">Mountain</option>
             <option value="snow">Snow</option>
+            <option value="lightning">Lightning</option>
+            <option value="fire">Fire</option>
+            <option value="animals">Animals</option>
         </select>
         </form>
         <br />
