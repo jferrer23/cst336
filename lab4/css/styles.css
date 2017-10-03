@@ -2,7 +2,7 @@
         opacity:0.9;
         width:100%;
         text-align:center;
-        color:yellow;
+        color:black;
     }
     
     input {
@@ -12,5 +12,17 @@
     
     #carousel-example-generic {
          margin: 0 auto;   
-         width: 700px;
+         width: 500px;
+         color:black;
+    }
+    
+    .bg {
+        background-image: url('<?=$backgroundImage?>');
+        background-size:cover;
+        background-repeat: no-repeat;
+        color:black;
+    }    
+    
+    #orientation {
+        background:white;
     }

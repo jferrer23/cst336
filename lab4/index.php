@@ -2,11 +2,21 @@
     $backgroundImage = "img/sea.jpg";
     
         // API calls go here
-        if(isset($_GET['keyword'])) {
+        if(isset($_GET['keyword']) or isset($_GET['category'])) {
             include 'api/pixabayAPI.php';
             $keyword = $_GET['keyword'];
-            $imageURLs = getImageURLs($keyword);
-            $backgroundImage = $imageURLs[array_rand($imageURLs)];
+            $category = $_GET['category'];
+            if ($category != "n/a" && $category != "")
+            {
+                $imageURLs = getImageURLs($category);
+                $backgroundImage = $imageURLs[array_rand($imageURLs)];
+            }
+            else if($keyword != "")
+            {
+                $imageURLs = getImageURLs($keyword);
+                $backgroundImage = $imageURLs[array_rand($imageURLs)];
+            }
+
         }
  ?>
  
@@ -19,34 +29,51 @@
         
         <style>
             @import url("css/styles.css");
-            body {
+            .bg {
                 background-image: url('<?=$backgroundImage?>');
+                background-size:cover;
+                background-repeat: no-repeat;
+                color:black;
             }
         </style>
     </head>
     
-    <body>
+    <body class="bg">
+        <br /> <br />
+        
         <!--- HTML form goes here! ---->
         <form>
         <input type="text" name="keyword" placeholder="Keyword" value="<?=$_GET['keyword']?>"/>
+        <input type="submit" value="Search"/>
+        <br />
+        <div id="orientation">
         <input type="radio" id="lhorizontal" name="layout" value="horizontal">
         <label for="Horizontal"></label><label for="lhorizontal">Horizontal</label>
         <input type="radio" id="lvertical" name="layout" value="vertical">
         <label for="Vertical"></label><label for="lvertical">Vertical</label>
+        <br />
+        </div>
         <select name ="category">
-            <option value="">Select One</option>
+            <option value="n/a">Select One</option>
             <option value="ocean">Sea</option>
-            <option>Forest</option>
-            <option>Mountain</option>
-            <option>Snow</option>
+            <option value="forest">Forest</option>
+            <option value="mountain">Mountain</option>
+            <option value="snow">Snow</option>
         </select>
-        <input type="submit" value="Search"/>
         </form>
         <br />
+        
         <?php
-        if(!isset($imageURLs)) {
+        $first = false;
+        if(!isset($imageURLs) && $category == "") {
             echo "<h2> Type a keyword to display a slideshow <br /> with random images from Pixabay.com</h2>";
-        } else {
+            $first = true;
+        } 
+        else if($keyword == "" and $category == "n/a")
+        {
+            echo "<h2> You must enter keyword or select category</h2>";
+        }
+        else {
             //Display carousel here
         ?>
         
