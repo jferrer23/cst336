@@ -1,5 +1,5 @@
 body {
-    background-color:crimson;
+    background-color:black;
     color:white;
     text-align: center;
 }
@@ -21,4 +21,13 @@ label {
 
 #right{
     float:right;
+}
+
+.outerBorder{
+    border:20px;
+    border-style:groove;
+    border-color:navy;
+    border-radius:10px;
+    background-color:#990000;
+    color:white;
 }

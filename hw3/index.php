@@ -11,12 +11,12 @@
         <h1>Character Creation</h1>
         <br />
         <div>
-            <div id="left">
+            <div id="left" class="outerBorder">
                 <h2>Construct your character</h2>         
                          <!--- HTML form goes here! ---->
                 <form>
                 <label>Name: </label>
-                <input type="text" name="name" placeholder="John Smith" value="<?=$_GET['name']?>"/>
+                <input type="text" name="name" value="<?=$_GET['name']?>"/>
                 
                 
                 <br /><br />
@@ -27,22 +27,34 @@
                 <label for="Vertical"></label><label for="fgen">Female</label>
                 <br /><br />
                 
+                <label>Class: </label>
                 <select name ="category">
                     <option value="n/a">Select One</option>
-                    <option value="ocean">Sea</option>
-                    <option value="forest">Forest</option>
-                    <option value="mountain">Mountain</option>
-                    <option value="snow">Snow</option>
-                    <option value="lightning">Lightning</option>
-                    <option value="fire">Fire</option>
-                    <option value="animals">Animals</option>
+                    <option value="swordsman">Swordsman</option>
+                    <option value="archer">Archer</option>
+                    <option value="thief">Thief</option>
+                    <option value="acolyte">Acolyte</option>
+                    <option value="novice">Novice</option>
                 </select>
                 </form>
                 <br />
+                
+                 <label>Background: </label>
+                <select name ="category">
+                    <option value="n/a">Select One</option>
+                    <option value="beach">Beach</option>
+                    <option value="forest">Forest</option>
+                    <option value="mountain">Mountain</option>
+                    <option value="lake">Lake</option>
+                    <option value="snow">Snow</option>
+                    <option value="desert">Desert</option>
+                </select>
+                </form>
+                <br /> <br />
                 <input type="submit" value="Create"/>
             </div>
             
-            <div id="right">
+            <div id="right" class="outerBorder">
                 
             </div>
             
