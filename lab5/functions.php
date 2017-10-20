@@ -43,10 +43,22 @@
         
         $records = $statement->fetchAll();
         
-        
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>Name</th>";
+        echo "<th>Type</th>";
+        echo "<th>Price</th>";
+        echo "<th>Status</th>";
+        echo "</tr>";
         foreach($records as $record) {
-            echo $record["deviceName"]." $".$record["price"]."<br/>";
+            echo "<tr>";
+            echo "<td>". $record["deviceName"] ."</td>";
+            echo "<td>". $record["deviceType"] ."</td>";
+            echo "<td>$". $record["price"] ."</td>";
+            echo "<td>". $record["status"] ."</td>";
+            echo "</tr>";
         }
+        echo "</table>";
     }
     
     

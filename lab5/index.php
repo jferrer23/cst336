@@ -9,7 +9,12 @@
     </head>
     
     <body>
-        <form>
+        <div class="outerBorder" id="appTitle">
+            <h1>Rentable Devices App</h1>
+        </div>
+        
+        <div class="outerBorder" id="filters">
+            <form>
             Device Name: <input type="text" name="device-name">
             
             <br/>
@@ -21,17 +26,22 @@
             </select>
             
             <input type="checkbox" name="available"> Available
-            <br/>
             
+            <p>Sort by:</p> 
             <input type="radio" name="order-by" value="deviceName"> Name
             <input type="radio" name="order-by" value="price"> Price
-            <br/>
+            <br/> <br />
 
             <input type="submit" value="Search" name="submit">
 
         </form>
-        <?php
-        displayDeviceList();
-        ?>
+        </div>
+        
+        <div class="outerBorder" id="deviceTable">
+            <?php
+                displayDeviceList();
+            ?>
+        </div>
+        
     </body>
 </html>
