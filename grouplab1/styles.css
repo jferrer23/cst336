@@ -1,0 +1,57 @@
+button.accordion {
+    background-color: #757575;
+    color: #2E2D88;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ccc; 
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #757575;
+    font-size: 1.2em;
+    color: #3F26BF;
+}
+
+.main {
+    margin: 0;
+    background: gray;
+    background-image: url("https://wallpapercave.com/wp/bV3WiYh.jpg");
+    color: #d60a0a;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.container {
+    margin: auto;
+    width: 550;
+}
+
+.homecontainer{
+    margin: auto;
+    
+    width: 700;
+    display: inline-block;
+}
+
+.textDiv {
+        border: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: red;
+}
+
+#dropdown {
+    background-color: #757575;
+    color: #2E2D88;
+}

@@ -66,6 +66,14 @@ a:hover{
     width:45%;
 }
 
+#grouplab{
+    float:left;
+    margin-left: 12px;
+    display:block;
+    height:70%;
+    width:45%;
+}
+
 #title{
     margin: 10px auto;
     display:block;
