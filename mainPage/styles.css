@@ -80,5 +80,16 @@ a:hover{
     width:40%;
 }
 
+#lab1-6{
+    float:left;
+    margin-left: 12px;
+    display:block;
+}
+
+#lab7-13{
+    float:right;
+    margin-Right: 212px;
+    display:block;
+}
 
 
