@@ -27,6 +27,9 @@
     }
     
     function updateBoard() {
+        
+        $("#word").html("");
+        
         for (var letter of board) {
             //document.getElementById("word").innerHTML += letter + " ";
             $("#word").append(letter + " ");
