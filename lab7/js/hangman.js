@@ -2,8 +2,10 @@
     var selectedHint = "";
     var board = "";
     var remainingGuesses = 6;
-    var words = ["snake", "monkey", "beetle"];
     
+    var words = [{word: "snake", hint: "It's a reptile"},
+                 {word: "monkey", hint: "It's a mammal"},
+                 {word: "beetle", hint: "It's an insect"}];
         
     window.onload = startGame;
 
@@ -23,7 +25,8 @@
     
     function pickWord() {
         var randomIndex = Math.floor(Math.random()*words.length);
-        selectedWord = words[randomIndex].toUpperCase();
+        selectedWord = words[randomIndex].word.toUpperCase();
+        selectedHint = words[randomIndex].hint;
     }
     
     function updateBoard() {
@@ -34,6 +37,9 @@
             //document.getElementById("word").innerHTML += letter + " ";
             $("#word").append(letter + " ");
         }
+        
+        $("#word").append("<br/>");
+        $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
     }
     
     function generateLetters() {
@@ -42,11 +48,12 @@
                 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
         
         for(var letter in alphabet) {
-            $("#letters").append("<button class='letter' id='" + alphabet[letter] + "'>" + alphabet[letter] + "</button>");
+            $("#letters").append("<button class='letter btn btn-success' id='" + alphabet[letter] + "'>" + alphabet[letter] + "</button>");
         }
         
         $(".letter").click(function() {
             checkLetter($(this).attr("id"));
+            disableButton($(this));
         });
     }
     
@@ -63,8 +70,16 @@
             
             if(positions.length > 0) {
                 updateWord(positions, letter);
+                
+                if(!board.includes('_')) {
+                    endGame(true);
+                }
             } else {
                 remainingGuesses -= 1;
+            }
+            
+            if(remainingGuesses <= 0) {
+                endGame(false);
             }
         }
     }
@@ -81,8 +96,28 @@
         return str.substr(0, index) + value + str.substr(index + value.length);
     }
     
+    function updateMan() {
+        $("#hangImg").attr("src", "img/stick_" + (6 - remainingGuesses) + ".png");
+    }
     
+    function endGame(win) {
+        $("#letters").hide();
+        
+        if(win){
+            $("#won").show();
+        } else {
+            $("#lost").show();
+        }
+        
+        $(".replayBtn").click(function() {
+            location.reload();
+        });
+    }
     
+    function disableButton(btn) {
+        btn.prop("disabled", true);
+        btn.attr("class", "btn btn-danger");
+    }
     
     
     
