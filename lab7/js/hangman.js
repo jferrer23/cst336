@@ -14,6 +14,7 @@
         pickWord();
         initBoard();
         updateBoard();
+        updateMan();
         generateLetters()
     }
     
@@ -75,7 +76,8 @@
                     endGame(true);
                 }
             } else {
-                remainingGuesses -= 1;
+                remainingGuesses--;
+                updateMan();
             }
             
             if(remainingGuesses <= 0) {
