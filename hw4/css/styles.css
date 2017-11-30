@@ -2,10 +2,10 @@ body, html {
     height: 100%;
 }
 
-body {
-    margin: 0px 0px;
-    background:black;
+#leftWon, #rightWon, #tieGame {
+    display: none;
 }
+
 
 .award{
     height: 75px;
@@ -19,6 +19,7 @@ body {
 
 .bg {
     /* The image used */
+    background-color:black;
     background-image: url("../img/Frame.png");
 
     /* Full height */
@@ -28,61 +29,79 @@ body {
     background-size:contain;
     background-position: center;
     background-repeat: no-repeat;
+    
+    color:white;
+}
+
+tagline{
+    top:0px;
+    left:150px;
+    position: absolute;
+    font-size:1.5em;
+    color: darkred;
+    text-shadow: 2px 2px #ff0000;
+}
+
+label{
+    top:120px;
+    left:30px;
+    position: absolute;
+    font-size:1em;
+    color: red;
 }
 
 #Fighter1{
     position: absolute;
-    top:185px;
-    left:190px;
+    top:180px;
+    left:145px;
     color:white;
 }
 
 #Fighter2{
     position: absolute;
-    top:185px;
+    top:180px;
     left:665px;
     color:white;
 }
 
-.leftFighter{
-    float:left;
-    margin-left: 225px;
-    margin-top:240px;
+#leftFighter{
+    position: absolute;
+    margin-top:260px;
+    margin-left: 210px;
     text-align: center;
 }
 
-.rightFighter{
-    
-    float:right;
-    margin-right: 225px;
-    margin-top:240px;
+#rightFighter{
+    position: absolute;
+    margin-top:260px;
+    margin-left: 710px;
     text-align: center;
 }
 
 #leftWon{
     position: absolute;
-    margin-left: 500px;
-    margin-top:240px;
+    margin-left: 330px;
+    margin-top: 100px;
     text-align: center;
 }
 
 #rightWon{
     position: absolute;
-    margin-left: 685px;
-    margin-top:240px;
+    margin-left: 850px;
+    margin-top: 100px;
     text-align: center;
 }
 
 #tieGame{
     position: absolute;
     text-align: center;
-    margin-left: 575px;
-    margin-top:240px;
+    margin-left: 603px;
+    margin-top:310px;
     color:red;
 }
 
 #redButton{
     position: absolute;
     top:50px;
-    left:50px;
+    left:29px;
 }

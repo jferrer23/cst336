@@ -1,131 +1,121 @@
-    var selectedWord = "";
-    var selectedHint = "";
-    var board = "";
-    var remainingGuesses = 6;
-    
-    var words = [{word: "snake", hint: "It's a reptile"},
-                 {word: "monkey", hint: "It's a mammal"},
-                 {word: "beetle", hint: "It's an insect"}];
-        
-    window.onload = startGame;
+    window.onload = winner();
 
     
-    function startGame() {
-        pickWord();
-        initBoard();
-        updateBoard();
-        updateMan();
-        generateLetters()
+    function createCombatants()
+    {
+        var fighters = new Array();
+        
+        for(var i = 1; i <= 16;  i++)
+        {
+            fighters.push("fighter-" + i + ".jpg");
+        }
+        
+        shuffle(fighters);
+        
+        return fighters;
     }
     
-     function initBoard() {
-        for (var letter in selectedWord) {
-            board += '_';
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
         }
     }
     
-    function pickWord() {
-        var randomIndex = Math.floor(Math.random()*words.length);
-        selectedWord = words[randomIndex].word.toUpperCase();
-        selectedHint = words[randomIndex].hint;
-    }
-    
-    function updateBoard() {
-        
-        $("#word").html("");
-        
-        for (var letter of board) {
-            //document.getElementById("word").innerHTML += letter + " ";
-            $("#word").append(letter + " ");
-        }
-        
-        $("#word").append("<br/>");
-        $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
-    }
-    
-    function generateLetters() {
-        var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 
-                'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 
-                'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-        
-        for(var letter in alphabet) {
-            $("#letters").append("<button class='letter btn btn-success' id='" + alphabet[letter] + "'>" + alphabet[letter] + "</button>");
-        }
-        
-        $(".letter").click(function() {
-            checkLetter($(this).attr("id"));
-            disableButton($(this));
-        });
-    }
-    
-    
-    
-    function checkLetter(letter) {
-        var positions = new Array();
-        
-        for( var i = 0; i < selectedWord.length; i++) {
-            console.log(selectedWord);
-            if(letter == selectedWord[i]) {
-                positions.push(i);
-            }
-        }
-        
-        if(positions.length > 0) {
-            updateWord(positions, letter);
-            
-            if(!board.includes('_')) {
-                endGame(true);
-            }
-        } else {
-            remainingGuesses--;
-            updateMan();
-        }
-    
-        if(remainingGuesses <= 0) {
-            endGame(false);
+    function getName(fighter)
+    {
+        switch(fighter)
+        {
+            case "fighter-1.jpg":
+                return "Cloud";
+            case "fighter-2.jpg":
+                return "Link";
+            case "fighter-3.jpg":
+                return "Mario";
+            case "fighter-4.jpg":
+                return "Samus";
+            case "fighter-5.jpg":
+                return "Guts";
+            case "fighter-6.jpg":
+                return "Red Ranger";
+            case "fighter-7.jpg":
+                return "Son Goku";
+            case "fighter-8.jpg":
+                return "Batman";
+            case "fighter-9.jpg":
+                return "Spiderman";
+            case "fighter-10.jpg":
+                return "Black Widow";
+            case "fighter-11.jpg":
+                return "Sailor Moon";
+            case "fighter-12.jpg":
+                return "Catwoman";
+            case "fighter-13.jpg":
+                return "Sakura Haruno";
+            case "fighter-14.jpg":
+                return "Princess Leia";
+            case "fighter-15.jpg":
+                return "Arturia Pendragon";
+            case "fighter-16.jpg":
+                return "Asuna Yuuki";
         }
     }
 
-    function updateWord(positions, letter) {
-        for (var pos of positions) {
-            board = replaceAt(board, pos, letter);
+    function selectFighters()
+    {
+        var fighters = createCombatants();
+        var selectedFighters = new Array();
+        
+        selectedFighters.push(fighters.pop());
+        selectedFighters.push(fighters.pop());
+    
+        return selectedFighters;
+    }
+    
+    function fight()
+    {
+        var leftScore = 0;
+        var rightScore = 0;
+    
+        for(var i = 0; i < 20; i++)
+        {
+            var leftAttackVal = Math.floor(Math.random()*20);
+            var rightAttackVal = Math.floor(Math.random()*20);
+            if(leftAttackVal < rightAttackVal)
+                rightScore++;
+            else if(leftAttackVal > rightAttackVal)
+                leftScore++;
         }
         
-        updateBoard();
+        if(leftScore > rightScore)
+            return 1;
+        else if(leftScore < rightScore)
+            return 2;
+        else
+            return 0;
     }
     
-    function replaceAt(str, index, value) {
-        return str.substr(0, index) + value + str.substr(index + value.length);
-    }
-    
-    function updateMan() {
-        $("#hangImg").attr("src", "img/stick_" + (6 - remainingGuesses) + ".png");
-    }
-    
-    function endGame(win) {
-        $("#letters").hide();
-        
-        if(win){
-            $("#won").show();
-        } else {
-            $("#lost").show();
-        }
-        
-        $(".replayBtn").click(function() {
-            location.reload();
-        });
-    }
-    
-    function disableButton(btn) {
-        btn.prop("disabled", true);
-        btn.attr("class", "btn btn-danger");
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+    function winner(){
+        var fighters = selectFighters();
+            $("#characters").append("<h1 id='Fighter1'>" + getName(fighters[0]) + "</h1>")
+            $("#characters").append("<img class='pic' id='leftFighter' src='img/" + fighters[0] + "'/>")
+
+            $("#characters").append("<h1 id='Fighter2'>" + getName(fighters[1]) + "<h1>")
+            $("#characters").append("<img class='pic' id='rightFighter' src='img/" + fighters[1] + "'/>")
+
+            switch(fight()){
+                case 0:
+                    $("#tieGame").show();
+                    break;
+                case 1:
+                    $("#leftWon").show();
+                    break;
+                case 2:
+                    $("#rightWon").show();
+                    break;
+            }
+}
     
