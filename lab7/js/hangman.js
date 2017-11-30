@@ -68,21 +68,21 @@
             if(letter == selectedWord[i]) {
                 positions.push(i);
             }
+        }
+        
+        if(positions.length > 0) {
+            updateWord(positions, letter);
             
-            if(positions.length > 0) {
-                updateWord(positions, letter);
-                
-                if(!board.includes('_')) {
-                    endGame(true);
-                }
-            } else {
-                remainingGuesses--;
-                updateMan();
+            if(!board.includes('_')) {
+                endGame(true);
             }
-            
-            if(remainingGuesses <= 0) {
-                endGame(false);
-            }
+        } else {
+            remainingGuesses--;
+            updateMan();
+        }
+    
+        if(remainingGuesses <= 0) {
+            endGame(false);
         }
     }
 
