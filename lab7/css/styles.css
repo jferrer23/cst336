@@ -27,3 +27,8 @@
     padding: 7px 7px;
     margin: 0px 2px;
 }
+
+body {
+    background:black;
+    color: white;
+}
