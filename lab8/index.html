@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajax Lab Project</title>
+        
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+
+    </head>
+    
+    <body id="dummybodyid">
+
+   <h1> Sign Up Form </h1>
+
+    <form>
+        <fieldset>
+           <legend>Sign Up</legend>
+            <label>First Name:</label>  <input type="text"><br> 
+            <label>Last Name:</label>   <input type="text"><br> 
+            <label>Email:</label>       <input type="text"><br> 
+            <label>Phone Number:</label><input type="text"><br><br>
+            <label>Zip Code:</label>    <input id="zip" onchange="getCityInfo();" type="text"><span id="valid-zip"></span><br>
+            <label>City:</label> <span id="city"></span>
+            <br>
+            <label>Latitude:</label> <span id="lat"></span>
+            <br>
+            <label>Longitude:</label> <span id="long"></span>
+            <br><br>
+            <label>State:</label> <select id="stateList" onchange="getCountyInfo();" name="stateList">
+                <option value=""></option>
+                <option value="ca">California</option>
+                <option value="nv">Nevada</option>
+                <option value="or">Oregon</option>
+                <option value="tx">Texas</option>
+                <option value="wa">Washington</option>
+            </select><br>
+            <label>Select a County:</label> <select id="countyList"></select><br>
+            
+            <label>Desired Username:</label> <input onchange="validateUserName();" id="username" type="text"> <span id="username-valid"></span><br>
+            <label>Password:</label> <input type="password"><br>
+            <label>Type Password Again:</label> <input type="password"><br><br>
+            <input type="submit" value="Sign up!">
+        </fieldset>
+    </form>
+    
+    <script src="js/script.js"></script>
+    </body>
+</html>
