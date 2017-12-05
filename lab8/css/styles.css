@@ -40,3 +40,10 @@ select {
     background-color: black;
     color: white;
 }
+
+input[type=submit] {
+    padding-left: 100px;
+    border: none;
+    background-color: solid red;
+    color: white;
+}
