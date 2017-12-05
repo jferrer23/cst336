@@ -14,8 +14,9 @@ label{
     clear: left;
     width: 250px;
     text-align: right;
+    padding-right: 10px;
 }
-input {
+input, span {
   display: inline-block;
   float: left;
 }
@@ -42,8 +43,10 @@ select {
 }
 
 input[type=submit] {
-    padding-left: 100px;
-    border: none;
-    background-color: solid red;
-    color: white;
+    margin-left: 260px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding-left:55px;
+    padding-right: 55px;
 }
