@@ -16,7 +16,7 @@ label{
     text-align: right;
     padding-right: 10px;
 }
-input, span {
+input, #city, #lat, #long {
   display: inline-block;
   float: left;
 }

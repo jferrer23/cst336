@@ -53,14 +53,12 @@ function validateUserName()
 {
     $.ajax({
             type: "get",
-             url: "http://ferr1760-cst336.herokuapp.com/lab8/api.php",
+             url: "http://cst-336-internet-programming-jferrer23.c9users.io/cst336-github/lab8/api.php",
         dataType: "json",
             data: {
-                 "username": $("#username").val(),
-                 "action": "validate-username"
+                 "username": $("#username").val()
             },
             success: function(data,status) {
-               
                if(data.length > 0){
                    $("#username-valid").html("Username is NOT available");
                }

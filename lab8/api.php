@@ -25,16 +25,9 @@ function getUsersThatMatchUsername() {
     $statement->execute();
     $records = $statement->fetchAll();
     
-    json_encode($records);
+    echo json_encode($records);
 }
 
-function validatePassword() {
-    $username = $_GET['username'];
-    $password = $_GET['password'];
-}
-
-if($_GET['action']=='validate-username'){
-    getUsersThatMatchUsername();
-} else if ($_GET['action']=='validate-password')
+getUsersThatMatchUsername();
 
 ?>
