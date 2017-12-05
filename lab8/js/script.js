@@ -53,7 +53,7 @@ function validateUserName()
 {
     $.ajax({
             type: "get",
-             url: "http://cst-336-internet-programming-jferrer23.c9users.io/cst336-github/lab8/api.php",
+             url: "api.php",
         dataType: "json",
             data: {
                  "username": $("#username").val()
