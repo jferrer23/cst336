@@ -53,7 +53,7 @@ function validateUserName()
 {
     $.ajax({
             type: "get",
-             url: "api.php",
+             url: "http://ferr1760-cst336.herokuapp.com/lab8/api.php",
         dataType: "json",
             data: {
                  "username": $("#username").val(),
