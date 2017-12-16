@@ -18,7 +18,7 @@
         generateLetters()
     }
     
-     function initBoard() {
+    function initBoard() {
         for (var letter in selectedWord) {
             board += '_';
         }

@@ -71,3 +71,34 @@ function validateUserName()
             }
          });
 }
+
+function validatePassword()
+{
+    $("#password-valid").html("");
+    
+    if($("pass1").length < 8)
+    {
+        $("#password-valid").html("<p>"+$("pass1").val()+"</p>");
+    }
+        
+    
+}
+
+function validatePasswordRE()
+{
+    if($("pass2").val() != $("pass1").val())
+    {
+        $("#passwordre-valid").html("Passwords do not match");
+    }
+    
+}
+
+function isset(object)
+{
+    if(object == undefined)
+    {
+        return false;
+    } else {
+        return true;
+    }
+}

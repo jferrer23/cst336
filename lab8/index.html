@@ -37,8 +37,8 @@
             <label>Select a County:</label> <select id="countyList"></select><br>
             
             <label>Desired Username:</label> <input onchange="validateUserName();" id="username" type="text"> <span id="username-valid"></span><br>
-            <label>Password:</label> <input type="password"><br>
-            <label>Type Password Again:</label> <input type="password"><br><br>
+            <label>Password:</label> <input id="pass1" onchange="validatePassword();" type="password"><span id="password-valid"></span><br>
+            <label>Type Password Again:</label> <input id="pass2" onchange="validatePasswordRE();" type="password"><span id="passwordre-valid"></span><br><br>
             <input type="submit" value="Sign up!">
         </fieldset>
     </form>
