@@ -11,12 +11,35 @@
                     Genre: 
                     <select id="dropdown" name="genrefilter">
                         <option value=""></option>
-                        <option value='Action'>Action</option>
-                        <option value='Anime'>Anime</option>
-                        <option value='Drama'>Drama</option>
-                        <option value='Fantasy'>Fantasy</option>
-                        <option value='Sci Fi'>Sci Fi</option>
-                        <option value='Thriller'>Thriller</option>
+                        <?php
+                        include 'database.php';
+                        $conn = getDatabaseConnection();
+                        $sql = "SELECT DISTINCT Genre FROM movies ORDER BY Genre";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                        foreach($records as $record) {
+                        echo "<option value='".$record["Genre"]."'>".$record["Genre"]."</option>";
+                        }
+                        ?>
+                    </select> <br />
+                    
+                    Director: 
+                    <select id="dropdown" name="directorFilter">
+                        <option value=""></option>
+                        <?php
+                        $sql = "SELECT DISTINCT Director FROM movies ORDER BY Director";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                        foreach($records as $record) {
+                        echo "<option value='".$record["Director"]."'>".$record["Director"]."</option>";
+                        }
+                        ?>
                     </select> <br />
                     
                     <input type="radio" name="order" value="ASC">Asc
@@ -31,16 +54,27 @@
             
             <div class="textDiv">
                 <?php
-                    include 'database.php';
-                    
-                    $conn = getDatabaseConnection();
-                    
                     $sql = "SELECT * FROM movies";
                     if(isset($_GET['submit'])){
+                        if(!empty($_GET['genrefilter']) || !empty($_GET['directorFilter']))
+                        {
+                            $sql .= " WHERE";
+                        }
                         if(!empty($_GET['genrefilter']))
                         {
-                            $sql .= " WHERE Genre = '" . $_GET['genrefilter'] . "'";
+                            $sql .= " Genre = '" . $_GET['genrefilter'] . "'";
                         }
+                        
+                        if(!empty($_GET['genrefilter']) && !empty($_GET['directorFilter']))
+                        {
+                            $sql .= " AND";
+                        }
+                        
+                        if(!empty($_GET['directorFilter']))
+                        {
+                            $sql .= " Director = '" . $_GET['directorFilter'] . "'";
+                        }
+                        
                         
                         if(isset($_GET['order']))
                         {

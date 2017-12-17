@@ -7,18 +7,38 @@
             <h1>Hottest Music</h1>
             <div class="formDiv">
                 <form >
-                    Available Filters: <br />
                     Genre: 
                     <select id="dropdown" name="genrefilter">
                         <option value=""></option>
-                        <option value='Alternative'>Alternative</option>
-                        <option value='Alternative Rock'>Alternative Rock</option>
-                        <option value='Classic Rock'>Classic Rock</option>
-                        <option value='Electronic'>Electronic</option>
-                        <option value='Hard Rock'>Hard Rock</option>
-                        <option value='Indie Rock'>Indie Rock</option>
-                        <option value='Pop'>Pop</option>
-                        <option value='Rock'>Rock</option>
+                        <?php
+                        include 'database.php';
+                        $conn = getDatabaseConnection();
+                        $sql = "SELECT DISTINCT Genre FROM music ORDER BY Genre";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                        foreach($records as $record) {
+                        echo "<option value='".$record["Genre"]."'>".$record["Genre"]."</option>";
+                        }
+                        ?>
+                    </select> <br />
+                    
+                    Artist: 
+                    <select id="dropdown" name="artistFilter">
+                        <option value=""></option>
+                        <?php
+                        $sql = "SELECT DISTINCT Artist FROM music ORDER BY Artist";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                        foreach($records as $record) {
+                        echo "<option value='".$record["Artist"]."'>".$record["Artist"]."</option>";
+                        }
+                        ?>
                     </select> <br />
                     
                     <input type="radio" name="order" value="ASC">Asc
@@ -33,15 +53,26 @@
             
             <div class="textDiv">
                 <?php
-                    include 'database.php';
-                    
-                    $conn = getDatabaseConnection();
-                    
+                
                     $sql = "SELECT * FROM music";
                     if(isset($_GET['submit'])){
+                        if(!empty($_GET['genrefilter']) || !empty($_GET['artistFilter']))
+                        {
+                            $sql .= " WHERE";
+                        }
                         if(!empty($_GET['genrefilter']))
                         {
-                            $sql .= " WHERE Genre = '" . $_GET['genrefilter'] . "'";
+                            $sql .= " Genre = '" . $_GET['genrefilter'] . "'";
+                        }
+                        
+                        if(!empty($_GET['genrefilter']) && !empty($_GET['artistFilter']))
+                        {
+                            $sql .= " AND";
+                        }
+                        
+                        if(!empty($_GET['artistFilter']))
+                        {
+                            $sql .= " Artist = '" . $_GET['artistFilter'] . "'";
                         }
                         
                         if(isset($_GET['order']))

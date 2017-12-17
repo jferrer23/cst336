@@ -11,12 +11,35 @@
                     Genre: 
                     <select id="dropdown" name="genrefilter">
                         <option value=""></option>
-                        <option value='Animated Sitcom'>Animated Sitcom</option>
-                        <option value='Drama'>Drama</option></option>
-                        <option value='Post-Apocalyptic'>Post-Apocalyptic</option>
-                        <option value='Sci Fi'>Sci Fi</option>
-                        <option value='Sitcom'>Sitcom</option>
-                        <option value='Thriller'>Thriller</option>
+                        <?php
+                        include 'database.php';
+                        $conn = getDatabaseConnection();
+                        $sql = "SELECT DISTINCT Genre FROM tvshows ORDER BY Genre";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                        foreach($records as $record) {
+                        echo "<option value='".$record["Genre"]."'>".$record["Genre"]."</option>";
+                        }
+                        ?>
+                    </select> <br />
+                    
+                    Creator: 
+                    <select id="dropdown" name="creatorFilter">
+                        <option value=""></option>
+                        <?php
+                        $sql = "SELECT DISTINCT `Program Creator` FROM tvshows ORDER BY `Program Creator`";
+
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
+                        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+                        foreach($records as $record) {
+                        echo "<option value='".$record["Program Creator"]."'>".$record["Program Creator"]."</option>";
+                        }
+                        ?>
                     </select> <br />
                     
                     <input type="radio" name="order" value="ASC">Asc
@@ -31,15 +54,25 @@
             
             <div class="textDiv">
                 <?php
-                    include 'database.php';
-                    
-                    $conn = getDatabaseConnection();
-                    
                     $sql = "SELECT * FROM tvshows";
                     if(isset($_GET['submit'])){
+                        if(!empty($_GET['genrefilter']) || !empty($_GET['creatorFilter']))
+                        {
+                            $sql .= " WHERE";
+                        }
                         if(!empty($_GET['genrefilter']))
                         {
-                            $sql .= " WHERE Genre = '" . $_GET['genrefilter'] . "'";
+                            $sql .= " Genre = '" . $_GET['genrefilter'] . "'";
+                        }
+                        
+                        if(!empty($_GET['genrefilter']) && !empty($_GET['creatorFilter']))
+                        {
+                            $sql .= " AND";
+                        }
+                        
+                        if(!empty($_GET['creatorFilter']))
+                        {
+                            $sql .= " `Program Creator` = '" . $_GET['creatorFilter'] . "'";
                         }
                         
                         if(isset($_GET['order']))

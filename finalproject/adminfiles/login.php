@@ -30,13 +30,13 @@ function loginProcess() {
                 
             } else {
                 
-               $_SESSION['username'] = $record['Username'];
-               $_SESSION['adminName'] = $record['FirstName'] . "  " . $record['LastName'];
+               $_SESSION['username'] = $record['userName'];
+               $_SESSION['adminName'] = $record['firstName'] . "  " . $record['lastName'];
                //echo $record['firstName'];
                header("Location: admin.php"); //redirecting to admin.php
                 
             }
-            print_r($record);
+            //print_r($record);
     }
 }
 
@@ -45,6 +45,7 @@ function loginProcess() {
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body class="main">
@@ -53,7 +54,7 @@ function loginProcess() {
             
             <form method="post">
                 
-                Username: <input type="text" name="username"/> <br />
+                Username: <input onchange="validateUserName();" id="username" type="text" name="username"/> <br/><span id="username-valid"></span><span id="username-invalid"></span><br />
                 
                 Password: <input type="password" name="password" /> <br />
                 
@@ -65,5 +66,7 @@ function loginProcess() {
             
             <?=loginProcess()?>
         </div>
+        <script src="js/script.js"></script>
+
     </body>
 </html>
